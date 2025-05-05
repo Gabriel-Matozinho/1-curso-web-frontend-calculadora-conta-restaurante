@@ -14,13 +14,14 @@ const metodoPagamento = readline.question('Qual é o metodo de pagamento (PIX, d
 //Façã sua lógica para aplicar o desconto apenas para PIX OU DINHEIRO
 let desconto = valorTotal;
 let porpessoa = numeroPessoas;
+let semDeconto = 0.0;
 if (metodoPagamento === "PIX" || metodoPagamento === "dinheiro") {
     desconto -= desconto * (10 / 100)
 }
 else{
-    porpessoa = desconto / porpessoa
+    semDeconto = desconto / porpessoa
 }
 
 
 // Exibindo os resultados
-console.log(`O valor fica R$ ${porpessoa.toFixed(2)}`);
+console.log(`O valor fica R$ ${semDeconto.toFixed(2)}`);
